@@ -18,5 +18,10 @@ namespace MSA2021p2.Models
         public string GitHub { get; set; }
 
         public string ImageURI { get; set; }
+        
+        //New item
+        public ICollection<Project> Projects { get; set; } = new List<Project>();
+
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

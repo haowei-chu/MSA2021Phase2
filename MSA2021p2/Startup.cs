@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MSA2021p2.Data;
+using MSA2021p2.GraphQL;
+using MSA2021p2.GraphQL.Comments;
+using MSA2021p2.GraphQL.Projects;
 using MSA2021p2.GraphQL.Students;
 using System;
 using System.Collections.Generic;
@@ -32,7 +35,11 @@ namespace MSA2021p2
 
             services.AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
-                    .AddTypeExtension<StudentQueries>();
+                    .AddTypeExtension<StudentQueries>()
+                    .AddTypeExtension<ProjectQueries>()
+                .AddType<ProjectType>()
+                .AddType<StudentType>()
+                .AddType<CommentType>();
 
         }
 

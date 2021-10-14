@@ -37,6 +37,10 @@ namespace MSA2021p2
                 .AddQueryType(d => d.Name("Query"))
                     .AddTypeExtension<StudentQueries>()
                     .AddTypeExtension<ProjectQueries>()
+                .AddMutationType(d => d.Name("Mutation"))
+                    .AddTypeExtension<StudentMutations>()
+                    .AddTypeExtension<ProjectMutations>()
+                    .AddTypeExtension<CommentMutations>()
                 .AddType<ProjectType>()
                 .AddType<StudentType>()
                 .AddType<CommentType>();
